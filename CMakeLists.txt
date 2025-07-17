@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.22)
+
+project(OpenAudio VERSION 0.1.0 LANGUAGES C CXX)
+
+set_property(GLOBAL PROPERTY USE_FOLDERS YES)
+
+add_subdirectory(external/JUCE)
+
+message(STATUS "JUCE_INSTALL_DESTINATION: ${JUCE_INSTALL_DESTINATION}")
+message(STATUS "JUCE_MODULES_INSTALL_DESTINATION: ${JUCE_MODULES_INSTALL_DESTINATION}")
+message(STATUS "JUCE_BINARY_DIR: ${JUCE_BINARY_DIR}")
+message(STATUS "JUCE_SOURCE_DIR: ${JUCE_SOURCE_DIR}")
+
+add_subdirectory(source)
+
+
+
