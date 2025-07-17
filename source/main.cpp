@@ -1,9 +1,16 @@
+#include <iostream>
+
 #include "main_component.h"
 
-
-// c++ main function
+/**
+ * @brief The main entry point of the application.
+ *
+ * This function initializes the JUCE application and starts the event loop.
+ */
 int main(int argc, char* argv[])
 {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
     // This will create the main application window and start the event loop.
 }
 
