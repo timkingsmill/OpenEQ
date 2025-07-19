@@ -47,10 +47,20 @@ public:
     }
 
     //==============================================================================
-    /*
-        This class implements the desktop window that contains an instance of
-        our MainComponent class.
-    */
+    
+    /**
+     * @class MainWindow
+     * @brief A final subclass of juce::DocumentWindow that serves as the main application window.
+     *
+     * This class manages the main window's appearance and behavior, including title bar usage,
+     * content component ownership, resizing, centering, and fullscreen mode for mobile platforms.
+     * It also handles the close button press event by requesting the application to quit.
+     *
+     * @note Be cautious when overriding DocumentWindow methods, as the base class relies on many of them.
+     *       Prefer implementing custom behavior in your content component.
+     *
+     * @see juce::DocumentWindow
+     */
     class MainWindow final : public juce::DocumentWindow
     {
     public:

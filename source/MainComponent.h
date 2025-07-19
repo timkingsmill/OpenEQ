@@ -4,7 +4,11 @@
 // directly. If you need to remain compatible with Projucer-generated builds, and
 // have called `juce_generate_juce_header(<thisTarget>)` in your CMakeLists.txt,
 // you could `#include <JuceHeader.h>` here instead, to make all your module headers visible.
+//#include <juce_gui_basics/layout/juce_SidePanel.h>
+#include <juce_gui_basics/juce_gui_basics.h>
 #include <juce_gui_extra/juce_gui_extra.h>
+#include <juce_audio_devices/juce_audio_devices.h>
+#include <juce_audio_utils/juce_audio_utils.h>
 
 /**
  * @class MainComponent
@@ -25,9 +29,19 @@ public:
     void paint (juce::Graphics&) override;
     void resized() override;
 
+    juce::SidePanel& getSidePanel() 
+    { 
+        return sidePanel; 
+    }
+
 private:
     //==============================================================================
-    // Your private member variables go here...
+    
+    std::unique_ptr<juce::AudioDeviceSelectorComponent> audioSetupComp;
+    juce::AudioDeviceManager audioDeviceManager;
+
+
+    juce::SidePanel sidePanel  { "Demos", 250, true };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
