@@ -64,6 +64,16 @@ public:
     class MainWindow final : public juce::DocumentWindow
     {
     public:
+        /**
+         * @brief Constructs a MainWindow instance with the specified window name.
+         *
+         * This constructor initializes the main application window using JUCE's DocumentWindow.
+         * It sets up the window's appearance, content, and behavior based on the platform:
+         * - On iOS and Android, the window is set to full screen.
+         * - On desktop platforms, the window is resizable and centered.
+         *
+         * @param name The name to be displayed in the window's title bar.
+         */
         explicit MainWindow (juce::String name)
             : DocumentWindow (name,
                               juce::Desktop::getInstance().getDefaultLookAndFeel()
